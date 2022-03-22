@@ -1,0 +1,20 @@
+package com.thread.callable;
+
+public class CallableResult {
+
+  private final int code;
+  private final String message;
+
+  public CallableResult(int code, String message) {
+    this.code = code;
+    this.message = message;
+  }
+
+  public String getMessage() {
+    return message;
+  }
+
+  public int getCode() {
+    return code;
+  }
+}
