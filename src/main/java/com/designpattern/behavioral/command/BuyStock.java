@@ -1,6 +1,6 @@
 package com.designpattern.behavioral.command;
 
-public class BuyStock implements Order {
+public class BuyStock extends Order {
 
   private final Stock stock;
 
