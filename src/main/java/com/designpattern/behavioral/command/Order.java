@@ -1,6 +1,6 @@
 package com.designpattern.behavioral.command;
 
-public interface Order {
+public abstract class Order {
 
-  void execute();
+  abstract void execute();
 }

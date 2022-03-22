@@ -12,7 +12,7 @@ public class Stock {
 
 
   public void buy() {
-    System.out.println(this.toString() + " bought");
+    System.out.println(this + " bought");
   }
 
   @Override
@@ -24,7 +24,7 @@ public class Stock {
   }
 
   public void sell() {
-    System.out.println(this.toString() + " sold");
+    System.out.println(this + " sold");
   }
 
 }
