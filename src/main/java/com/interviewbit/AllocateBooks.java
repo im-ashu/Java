@@ -20,8 +20,8 @@ public class AllocateBooks {
     }
     int h = A.stream().mapToInt(integer -> integer).sum();
     int max = Integer.MIN_VALUE;
-    for (int i = 0; i < n; i++) {
-      max = Math.max(max, A.get(i));
+    for (Integer integer : A) {
+      max = Math.max(max, integer);
     }
     int l = max;
     int ans = -1;
@@ -40,16 +40,15 @@ public class AllocateBooks {
   private static boolean isPossible(ArrayList<Integer> a, int b, int sum) {
     int numStudents = 1;
     int currentSum = 0;
-    int n = a.size();
-    for (int i = 0; i < n; i++) {
-      if (currentSum + a.get(i) > sum) {
+    for (Integer integer : a) {
+      if (currentSum + integer > sum) {
         numStudents++;
-        currentSum = a.get(i);
+        currentSum = integer;
         if (numStudents > b) {
           return false;
         }
       } else {
-        currentSum += a.get(i);
+        currentSum += integer;
       }
     }
     return true;

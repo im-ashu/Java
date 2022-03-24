@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 public class Dijkstra {
 
   public static void main(String[] args) {
-    int graph[][] = new int[][]{
+    int[][] graph = new int[][]{
         //0, 1, 2, 3, 4, 5, 6, 7, 8
         {0, 4, 0, 0, 0, 0, 0, 8, 0},
         {4, 0, 8, 0, 0, 0, 0, 11, 0},
@@ -46,7 +46,7 @@ public class Dijkstra {
     printSolution(dist);
   }
 
-  private void printSolution(int dist[]) {
+  private void printSolution(int[] dist) {
     System.out.println("Vertex \t\t Distance from Source");
     int V = dist.length;
     for (int i = 0; i < V; i++) {

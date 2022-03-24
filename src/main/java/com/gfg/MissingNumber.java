@@ -13,11 +13,11 @@ public class MissingNumber {
       int[] array = {1, 2, 3, 5};
       int n = array.length + 1;
       MissingNumber sln = new MissingNumber();
-      System.out.println(sln.MissingNumber(array, n));
+      System.out.println(sln.missingNumber(array, n));
     }
   }
 
-  int MissingNumber(int array[], int n) {
+  int missingNumber(int[] array, int n) {
     // Your Code Here
     final int sum = Arrays.stream(array).sum();
     final int rangeSum = (n * (n + 1) >> 1);

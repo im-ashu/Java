@@ -12,20 +12,18 @@ public class KthSmallest {
 
     while (t-- > 0) {
 
-      int arr[] = {7, 10, 4, 20, 15};
-      int n = arr.length;
+      int[] arr = {7, 10, 4, 20, 15};
       int k = 4;
-      KthSmallest ob = new KthSmallest();
-      out.println(ob.kthSmallest(arr, 0, n, k));
+      out.println(kthSmallest(arr, k));
     }
     out.flush();
   }
 
-  public static int kthSmallest(int[] arr, int l, int r, int k) {
+  public static int kthSmallest(int[] arr, int k) {
     //Your code here
     PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
-    for (int i = 0; i < arr.length; i++) {
-      maxHeap.add(arr[i]);
+    for (int j : arr) {
+      maxHeap.add(j);
       if (maxHeap.size() > k) {
         maxHeap.poll();
       }

@@ -11,9 +11,9 @@ public class RotateMatrix {
     ArrayList<ArrayList<Integer>> a = new ArrayList<>(Arrays.asList(firstRow, secondRow));
     rotate(a);
     reverseRows(a);
-    for (int i = 0; i < a.size(); i++) {
-      for (int j = 0; j < a.get(i).size(); j++) {
-        System.out.print(a.get(i).get(j) + " ");
+    for (ArrayList<Integer> integers : a) {
+      for (Integer integer : integers) {
+        System.out.print(integer + " ");
       }
       System.out.println();
     }

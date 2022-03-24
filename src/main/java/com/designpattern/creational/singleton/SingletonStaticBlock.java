@@ -2,7 +2,7 @@ package com.designpattern.creational.singleton;
 
 public final class SingletonStaticBlock {
 
-  private static SingletonStaticBlock instance;
+  private static final SingletonStaticBlock instance;
 
   static {
     instance = new SingletonStaticBlock();

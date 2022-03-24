@@ -5,8 +5,8 @@ import java.util.Stack;
 
 public class BSTIterator {
 
-  private Stack<TreeNode> n = new Stack<>();
-  private Stack<TreeNode> p = new Stack<>();
+  private final Stack<TreeNode> n = new Stack<>();
+  private final Stack<TreeNode> p = new Stack<>();
 
   public BSTIterator(TreeNode root) {
     // Write your code here.

@@ -63,9 +63,7 @@ public class InsertANodeAtTheTailOfALinkedList {
       int listItem = scanner.nextInt();
       scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-      SinglyLinkedListNode list_head = insertNodeAtTail(list.head, listItem);
-
-      list.head = list_head;
+      list.head = insertNodeAtTail(list.head, listItem);
     }
 
     printSinglyLinkedList(list.head);

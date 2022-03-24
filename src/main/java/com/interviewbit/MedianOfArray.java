@@ -8,7 +8,7 @@ public class MedianOfArray {
 
   public static void main(String[] args) {
     final List<Integer> a = new ArrayList<>(Arrays.asList(-43, -25, -18, -15, -10, 9, 39, 40));
-    final List<Integer> b = new ArrayList<>(Arrays.asList(-20));
+    final List<Integer> b = new ArrayList<>(Arrays.asList(-20, -12));
     System.out.println(findMedianSortedArrays(a, b));
   }
 

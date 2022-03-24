@@ -2,6 +2,14 @@ package com.designpattern.creational.singleton;
 
 class SingletonParent implements Cloneable {
 
+  @Override
+  public SingletonParent clone() throws CloneNotSupportedException {
+    try {
+      return (SingletonParent) super.clone();
+    } catch (CloneNotSupportedException e) {
+      throw new AssertionError();
+    }
+  }
 }
 
 public final class SingletonCloneSafe extends SingletonParent {
@@ -19,7 +27,7 @@ public final class SingletonCloneSafe extends SingletonParent {
   }
 
   @Override
-  protected Object clone() throws CloneNotSupportedException {
+  public SingletonParent clone() throws CloneNotSupportedException {
     throw new CloneNotSupportedException("Clone is not supported for Singleton class");
   }
 }

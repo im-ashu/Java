@@ -18,11 +18,11 @@ public class KthLargestElement {
       minHeap.add(array[i]);
     }
     for (int i = k; i < n; i++) {
-      if (minHeap.peek() < array[i]) {
+      if (!minHeap.isEmpty() && minHeap.peek() < array[i]) {
         minHeap.poll();
         minHeap.add(array[i]);
       }
     }
-    return minHeap.peek();
+    return !minHeap.isEmpty() ? minHeap.peek() : -1;
   }
 }

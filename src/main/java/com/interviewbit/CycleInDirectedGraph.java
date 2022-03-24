@@ -54,7 +54,7 @@ public class CycleInDirectedGraph {
     return false;
   }
 
-  class Edge {
+  static class Edge {
 
     int src;
     int nbr;

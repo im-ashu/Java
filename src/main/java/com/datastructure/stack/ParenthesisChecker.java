@@ -5,8 +5,10 @@ import java.util.Stack;
 public class ParenthesisChecker {
 
   public static void main(String[] args) {
-    System.out.println(isPar("{([[[[[[[[[["));
-    System.out.println(solve("()"));
+    String x = "{([[[[[[[[[[";
+    System.out.println(isPar(x));
+    x = "()";
+    System.out.println(solve(x));
   }
 
   static boolean isPar(String x) {

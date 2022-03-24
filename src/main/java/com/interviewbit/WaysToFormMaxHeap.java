@@ -7,7 +7,7 @@ import java.util.List;
 public class WaysToFormMaxHeap {
 
   private static final long M = 1000000007;
-  static int t[] = new int[101];
+  static int[] t = new int[101];
   List<List<Integer>> nCrdp = new ArrayList<>();
 
   {

@@ -3,13 +3,12 @@ package com.datastructure.backtracking;
 public class NQueenProblem {
 
   public static void main(String[] args) {
-    int N = 4;
     int[][] board = {{0, 0, 0, 0},
         {0, 0, 0, 0},
         {0, 0, 0, 0},
         {0, 0, 0, 0}};
 
-    if (solveNQUtil(board, 0) == false) {
+    if (!solveNQUtil(board, 0)) {
       System.out.println("Solution does not exist");
     }
 
@@ -18,9 +17,9 @@ public class NQueenProblem {
 
   private static void printSolution(int[][] board) {
     int N = board.length;
-    for (int i = 0; i < N; i++) {
+    for (int[] ints : board) {
       for (int j = 0; j < N; j++) {
-        System.out.print(board[i][j] + " ");
+        System.out.print(ints[j] + " ");
       }
       System.out.println();
     }

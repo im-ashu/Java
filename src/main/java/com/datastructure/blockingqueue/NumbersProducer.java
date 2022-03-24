@@ -7,7 +7,7 @@ public class NumbersProducer implements Runnable {
 
   private final int poisonPill;
   private final int poisonPillPerProducer;
-  private BlockingQueue<Integer> numbersQueue;
+  private final BlockingQueue<Integer> numbersQueue;
 
   public NumbersProducer(BlockingQueue<Integer> numbersQueue, int poisonPill,
       int poisonPillPerProducer) {

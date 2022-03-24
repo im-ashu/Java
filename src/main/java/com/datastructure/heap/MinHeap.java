@@ -5,9 +5,9 @@ public class MinHeap {
   public int[] heapArray;
   int heapSize;
   int capacity;
+  int DEFAULT_CAPACITY = 50;
 
   public MinHeap(int[] a, int n) {
-    int DEFAULT_CAPACITY = 50;
     capacity = DEFAULT_CAPACITY;
     heapArray = new int[capacity];
     System.arraycopy(a, 0, heapArray, 0, a.length);

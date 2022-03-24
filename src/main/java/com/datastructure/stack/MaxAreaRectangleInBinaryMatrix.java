@@ -45,9 +45,8 @@ public class MaxAreaRectangleInBinaryMatrix {
   private static ArrayList<Integer> generateIndexesNSR(int[] arr, int n) {
     ArrayList<Integer> nse = new ArrayList<>(n);
     Stack<Integer> stack = new Stack<>();
-    int pseudoIndex = n;
     for (int i = n - 1; i >= 0; i--) {
-      nextSmallerCommon(nse, stack, arr, i, pseudoIndex);
+      nextSmallerCommon(nse, stack, arr, i, n);
     }
     Collections.reverse(nse);
     return nse;

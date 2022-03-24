@@ -11,9 +11,9 @@ import org.javatuples.Triplet;
 
 public class FindKPairsWithSmallestSumsInTwoArrays {
 
-  private static Queue<Triplet<Integer, Integer, Integer>> priorityQueue = new PriorityQueue<>(
+  private static final Queue<Triplet<Integer, Integer, Integer>> priorityQueue = new PriorityQueue<>(
       Comparator.comparing(Triplet::getValue0));
-  private static Set<Pair<Integer, Integer>> set = new HashSet<>();
+  private static final Set<Pair<Integer, Integer>> set = new HashSet<>();
 
   public static void main(String[] args) {
     int[] arr1 = {11, 1, 3};

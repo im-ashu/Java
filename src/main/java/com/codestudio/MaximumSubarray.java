@@ -10,7 +10,7 @@ public class MaximumSubarray {
     maximumsumSubarray(n, arr);
   }
 
-  public static ArrayList<Integer> maximumsumSubarray(int n, int arr[]) {
+  public static ArrayList<Integer> maximumsumSubarray(int n, int[] arr) {
     // Write your code here
     int maxEndingHere = arr[0];
     int maxSoFar = arr[0];

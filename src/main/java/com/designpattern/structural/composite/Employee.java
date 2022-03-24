@@ -8,7 +8,7 @@ public class Employee {
   private final String name;
   private final String dept;
   private final int age;
-  private List<Employee> subordinates;
+  private final List<Employee> subordinates;
 
   public Employee(String name, String dept, int age) {
     this.name = name;

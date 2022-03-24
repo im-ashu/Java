@@ -9,6 +9,6 @@ public class Main {
     HeadDepartment headDepartment = new HeadDepartment("3", "QWERTY");
     headDepartment.addDepartments(sale);
     headDepartment.addDepartments(finance);
-    System.out.println(headDepartment.toString());
+    System.out.println(headDepartment);
   }
 }

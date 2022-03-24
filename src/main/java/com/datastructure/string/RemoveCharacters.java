@@ -3,7 +3,9 @@ package com.datastructure.string;
 public class RemoveCharacters {
 
   public static void main(String[] args) {
-    System.out.println(removeChars("occurrence", "car"));
+    String s1 = "occurrence";
+    String s2 = "car";
+    System.out.println(removeChars(s1, s2));
   }
 
   static String removeChars(String string1, String string2) {

@@ -6,10 +6,11 @@ import java.util.Map;
 public class NonRepeatingCharacter {
 
   public static void main(String[] args) {
-    System.out.println(nonrepeatingCharacter("lehlo"));
+    String s = "lehlo";
+    System.out.println(nonRepeatingCharacter(s));
   }
 
-  static char nonrepeatingCharacter(String S) {
+  static char nonRepeatingCharacter(String S) {
     //Your code here
     Map<Character, Integer> result = new LinkedHashMap<>();
     int n = S.length();

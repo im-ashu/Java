@@ -5,7 +5,7 @@ import java.util.concurrent.BlockingQueue;
 public class NumbersConsumer implements Runnable {
 
   private final int poisonPill;
-  private BlockingQueue<Integer> queue;
+  private final BlockingQueue<Integer> queue;
 
   public NumbersConsumer(BlockingQueue<Integer> queue, int poisonPill) {
     this.queue = queue;

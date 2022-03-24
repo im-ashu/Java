@@ -167,7 +167,7 @@ public class CycleInUndirectedGraph {
     return false;
   }
 
-  class Edge {
+  static class Edge {
 
     int src;
     int nbr;

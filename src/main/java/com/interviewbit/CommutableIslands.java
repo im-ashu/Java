@@ -17,7 +17,7 @@ public class CommutableIslands {
     B.add(new ArrayList<>(Arrays.asList(1, 4, 3)));
     B.add(new ArrayList<>(Arrays.asList(4, 3, 2)));
     B.add(new ArrayList<>(Arrays.asList(1, 3, 10)));
-    c.solve(A, B);
+    System.out.println(c.solve(A, B));
   }
 
   public int solve(int A, ArrayList<ArrayList<Integer>> B) {
@@ -34,9 +34,9 @@ public class CommutableIslands {
     }
     boolean[] visited = new boolean[A + 1];
     int[] distance = new int[A + 1];
-    shortestPath(graph, 1, visited, distance);
-    final int sum = Arrays.stream(distance).sum();
-    return sum;
+    int vertex = 1;
+    shortestPath(graph, vertex, visited, distance);
+    return Arrays.stream(distance).sum();
   }
 
   private void shortestPath(ArrayList<Edge>[] graph, int vertex, boolean[] visited,
@@ -58,7 +58,7 @@ public class CommutableIslands {
     }
   }
 
-  class Edge {
+  static class Edge {
 
     int src;
     int nbr;
@@ -71,7 +71,7 @@ public class CommutableIslands {
     }
   }
 
-  class Pair {
+  static class Pair {
 
     int v;
     int wt;

@@ -17,12 +17,11 @@ class MyMath {
   }
 
   public PerformOperation isOdd() {
-    PerformOperation p = (a) -> (a % 2) == 1;
-    return p;
+    return (a) -> (a % 2) == 1;
   }
 
   public PerformOperation isPrime() {
-    PerformOperation p = (a) -> {
+    return (a) -> {
       if (a == 0 || a == 1) {
         return false;
       }
@@ -36,11 +35,10 @@ class MyMath {
       }
       return true;
     };
-    return p;
   }
 
   public PerformOperation isPalindrome() {
-    PerformOperation p = (a) -> {
+    return (a) -> {
       int rev = 0;
       int r;
       int n = a;
@@ -51,7 +49,6 @@ class MyMath {
       }
       return (rev == a);
     };
-    return p;
   }
 }
 
@@ -71,15 +68,15 @@ public class JavaLambdaExpressions {
       int num = Integer.parseInt(st.nextToken());
       if (ch == 1) {
         op = ob.isOdd();
-        ret = ob.checker(op, num);
+        ret = MyMath.checker(op, num);
         ans = (ret) ? "ODD" : "EVEN";
       } else if (ch == 2) {
         op = ob.isPrime();
-        ret = ob.checker(op, num);
+        ret = MyMath.checker(op, num);
         ans = (ret) ? "PRIME" : "COMPOSITE";
       } else if (ch == 3) {
         op = ob.isPalindrome();
-        ret = ob.checker(op, num);
+        ret = MyMath.checker(op, num);
         ans = (ret) ? "PALINDROME" : "NOT PALINDROME";
 
       }

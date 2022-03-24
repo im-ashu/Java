@@ -24,9 +24,9 @@ public class PrintAnagramsTogether {
 
   public static List<List<String>> Anagrams(String[] string_list) {
     // Code here
-    List<List<String>> result = new ArrayList<>();
+    List<List<String>> result;
     int n = string_list.length;
-    if (result.isEmpty()) {
+    {
       result = new ArrayList<>();
       ArrayList<String> objects = new ArrayList<>();
       objects.add(string_list[0]);

@@ -36,8 +36,7 @@ public class DiameterOfTree {
     int leftHeight = height(node.left, result);
     int rightHeight = height(node.right, result);
     int height = 1 + Math.max(leftHeight, rightHeight);
-    int diameter = Math.max(result.ans, 1 + leftHeight + rightHeight);
-    result.ans = diameter;
+    result.ans = Math.max(result.ans, 1 + leftHeight + rightHeight);
     return height;
   }
 

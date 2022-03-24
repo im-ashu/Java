@@ -44,10 +44,7 @@ public class CompareTwoLinkedLists {
     if (ptr2.next != null) {
       return false;
     }
-    if (ptr1.next != null) {
-      return false;
-    }
-    return true;
+    return ptr1.next == null;
   }
 
   // Complete the compareLists function below.

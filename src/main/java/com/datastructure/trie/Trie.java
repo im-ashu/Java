@@ -21,36 +21,36 @@ public class Trie {
 
     // Construct trie
     int i;
-   for (i = 0; i < keys.length; i++) {
-    trie.insert(keys[i]);
-   }
+    for (i = 0; i < keys.length; i++) {
+      trie.insert(keys[i]);
+    }
 
     // Search for different keys
-   if (trie.search("these")) {
-    System.out.println("these --- " + output[1]);
-   } else {
-    System.out.println("these --- " + output[0]);
-   }
+    if (trie.search("these")) {
+      System.out.println("these --- " + output[1]);
+    } else {
+      System.out.println("these --- " + output[0]);
+    }
 
     trie.remove(trie.root, "the", 0);
 
-   if (trie.search("the")) {
-    System.out.println("the --- " + output[1]);
-   } else {
-    System.out.println("the --- " + output[0]);
-   }
+    if (trie.search("the")) {
+      System.out.println("the --- " + output[1]);
+    } else {
+      System.out.println("the --- " + output[0]);
+    }
 
-   if (trie.search("their")) {
-    System.out.println("their --- " + output[1]);
-   } else {
-    System.out.println("their --- " + output[0]);
-   }
+    if (trie.search("their")) {
+      System.out.println("their --- " + output[1]);
+    } else {
+      System.out.println("their --- " + output[0]);
+    }
 
-   if (trie.search("thaw")) {
-    System.out.println("thaw --- " + output[1]);
-   } else {
-    System.out.println("thaw --- " + output[0]);
-   }
+    if (trie.search("thaw")) {
+      System.out.println("thaw --- " + output[1]);
+    } else {
+      System.out.println("thaw --- " + output[0]);
+    }
 
   }
 

@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class DeleteMiddleElement {
 
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     Stack<Character> st = new Stack<Character>();
 
     // push elements into the stack

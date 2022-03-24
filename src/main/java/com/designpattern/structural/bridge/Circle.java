@@ -2,9 +2,9 @@ package com.designpattern.structural.bridge;
 
 public class Circle extends Shape {
 
-  private int x;
-  private int y;
-  private int radius;
+  private final int x;
+  private final int y;
+  private final int radius;
 
   public Circle(int x, int y, int radius, DrawApi drawApi) {
     super(drawApi);

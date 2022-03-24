@@ -20,8 +20,9 @@ public class Main {
 class Sum extends RecursiveTask<Double> {
 
   private final int seqThreshold = 500;
-  private double[] data;
-  private int start, end;
+  private final double[] data;
+  private final int start;
+  private final int end;
 
   public Sum(double[] data, int start, int end) {
     this.data = data;

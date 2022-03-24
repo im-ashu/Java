@@ -34,9 +34,6 @@ public class PalindromeString {
     if (c - 'a' >= 0 && c - 'a' <= 26) {
       return true;
     }
-    if (c - '0' >= 0 && c - '0' <= 9) {
-      return true;
-    }
-    return false;
+    return c - '0' >= 0 && c - '0' <= 9;
   }
 }

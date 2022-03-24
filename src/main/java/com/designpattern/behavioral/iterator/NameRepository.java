@@ -2,7 +2,7 @@ package com.designpattern.behavioral.iterator;
 
 public class NameRepository implements Container {
 
-  public final String names[] = {"Robert", "John", "Michael", "Lora"};
+  public final String[] names = {"Robert", "John", "Michael", "Lora"};
 
   @Override
   public Iterator getIterator() {
@@ -15,10 +15,7 @@ public class NameRepository implements Container {
 
     @Override
     public boolean hasNext() {
-      if (index < names.length) {
-        return true;
-      }
-      return false;
+      return index < names.length;
     }
 
     @Override
