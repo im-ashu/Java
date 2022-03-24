@@ -9,9 +9,9 @@ public class SmallestElementInSortedRotatedArray {
   }
 
   private static int findMin(int[] arr, int low, int high) {
-   if (high < low) {
-    return arr[0];
-   }
+    if (high < low) {
+      return arr[0];
+    }
     if (high == low) {
       return arr[low];
     }

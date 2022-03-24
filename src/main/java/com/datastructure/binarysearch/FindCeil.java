@@ -9,13 +9,13 @@ public class FindCeil {
     int index = ceilSearch(
         arr, 0, n - 1,
         x);
-   if (index == -1) {
-    System.out.println(
-        "Ceil of " + x + " doesn't exist in array ");
-   } else {
-    System.out.println(
-        "Ceil of " + x + " is " + arr[index]);
-   }
+    if (index == -1) {
+      System.out.println(
+          "Ceil of " + x + " doesn't exist in array ");
+    } else {
+      System.out.println(
+          "Ceil of " + x + " is " + arr[index]);
+    }
   }
 
   private static int ceilSearch(int[] arr, int start, int end, int x) {

@@ -8,11 +8,11 @@ public class FindPythagoreanTriplet {
   public static void main(String[] args) {
     int[] arr = {3, 2, 4, 6, 5};
     int n = arr.length;
-   if (checkTriplet(arr, n)) {
-    System.out.print("Yes");
-   } else {
-    System.out.print("No");
-   }
+    if (checkTriplet(arr, n)) {
+      System.out.print("Yes");
+    } else {
+      System.out.print("No");
+    }
   }
 
   private static boolean checkTriplet(int[] arr, int n) {

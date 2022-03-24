@@ -49,9 +49,9 @@ public class Dijkstra {
   private void printSolution(int dist[]) {
     System.out.println("Vertex \t\t Distance from Source");
     int V = dist.length;
-   for (int i = 0; i < V; i++) {
-    System.out.println(i + " \t\t " + dist[i]);
-   }
+    for (int i = 0; i < V; i++) {
+      System.out.println(i + " \t\t " + dist[i]);
+    }
   }
 
   private int minDistance(int[] dist, boolean[] spSet) {

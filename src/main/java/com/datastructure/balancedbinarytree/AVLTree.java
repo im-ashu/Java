@@ -49,9 +49,9 @@ public class AVLTree<T extends Comparable<T>> {
   }
 
   public int height() {
-   if (root == null) {
-    return 0;
-   }
+    if (root == null) {
+      return 0;
+    }
     return root.height;
   }
 
@@ -60,16 +60,16 @@ public class AVLTree<T extends Comparable<T>> {
   }
 
   public boolean contains(T value) {
-   if (value == null) {
-    return false;
-   }
+    if (value == null) {
+      return false;
+    }
     return contains(root, value);
   }
 
   private boolean contains(AVLNode<?> node, T value) {
-   if (value == null || node == null) {
-    return false;
-   }
+    if (value == null || node == null) {
+      return false;
+    }
     int compareValue = value.compareTo((T) node.data);
     if (compareValue < 0) {
       return contains(node.left, value);
@@ -80,9 +80,9 @@ public class AVLTree<T extends Comparable<T>> {
   }
 
   private AVLNode<?> insert(AVLNode<?> node, T value) {
-   if (node == null) {
-    return new AVLNode<>(value);
-   }
+    if (node == null) {
+      return new AVLNode<>(value);
+    }
     int compareValue = value.compareTo((T) node.data);
     if (compareValue < 0) {
       node.left = insert(node.left, value);
@@ -94,9 +94,9 @@ public class AVLTree<T extends Comparable<T>> {
   }
 
   public boolean insert(T value) {
-   if (value == null) {
-    return false;
-   }
+    if (value == null) {
+      return false;
+    }
     if (!contains(value)) {
       root = insert(root, value);
       nodeCount++;
@@ -113,9 +113,9 @@ public class AVLTree<T extends Comparable<T>> {
   }
 
   private AVLNode<?> balance(AVLNode<?> node) {
-   if (node == null) {
-    return null;
-   }
+    if (node == null) {
+      return null;
+    }
     if (node.balanceFactor == -2) {
       if (node.left.balanceFactor <= 0) {
         return leftLeftCase(node);
@@ -169,9 +169,9 @@ public class AVLTree<T extends Comparable<T>> {
   }
 
   public boolean remove(T value) {
-   if (value == null) {
-    return false;
-   }
+    if (value == null) {
+      return false;
+    }
     if (contains(value)) {
       root = remove(root, value);
       nodeCount--;
@@ -181,9 +181,9 @@ public class AVLTree<T extends Comparable<T>> {
   }
 
   private AVLNode<?> remove(AVLNode<?> node, T value) {
-   if (value == null) {
-    return null;
-   }
+    if (value == null) {
+      return null;
+    }
     int compareValue = value.compareTo((T) node.data);
     if (compareValue < 0) {
       node.left = remove(node.left, value);
@@ -211,30 +211,30 @@ public class AVLTree<T extends Comparable<T>> {
   }
 
   private AVLNode<?> findMax(AVLNode<?> node) {
-   while (node.left != null) {
-    node = node.left;
-   }
+    while (node.left != null) {
+      node = node.left;
+    }
     return node;
   }
 
   private AVLNode<?> findMin(AVLNode<?> node) {
-   while (node.right != null) {
-    node = node.right;
-   }
+    while (node.right != null) {
+      node = node.right;
+    }
     return node;
   }
 
   public void preOrderTraversal() {
-   if (root == null) {
-    return;
-   }
+    if (root == null) {
+      return;
+    }
     preOrderTraversal(root);
   }
 
   private void preOrderTraversal(AVLNode<?> node) {
-   if (node == null) {
-    return;
-   }
+    if (node == null) {
+      return;
+    }
     System.out.print(node.data + " ");
     preOrderTraversal(node.left);
     preOrderTraversal(node.right);
@@ -265,12 +265,12 @@ public class AVLTree<T extends Comparable<T>> {
     while (!queue.isEmpty()) {
       AVLNode<?> node = queue.poll();
       System.out.print(node.data + " ");
-     if (node.left != null) {
-      queue.add(node.left);
-     }
-     if (node.right != null) {
-      queue.add(node.right);
-     }
+      if (node.left != null) {
+        queue.add(node.left);
+      }
+      if (node.right != null) {
+        queue.add(node.right);
+      }
     }
   }
 }

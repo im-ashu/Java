@@ -1,50 +1,31 @@
 package com.datastructure.stack;
 
-import java.util.Arrays;
 import java.util.Stack;
 
 public class NextGreaterElement {
 
-  public static void main(String args[]) {
-    int arr[] = {15, 10, 7, 6, 11, 16};
+  public static void main(String[] args) {
+
+    int[] arr = {11, 13, 21, 3};
     int n = arr.length;
-    int ans[] = new int[n];
-    printNGE(arr, n, ans);
-    Arrays.stream(ans).forEachOrdered(NextGreaterElement::accept);
+    printNGE(arr, n);
   }
 
-  private static void printNGE(int[] arr, int n, int[] ans) {
+  private static void printNGE(int[] arr, int n) {
     Stack<Integer> stack = new Stack<>();
-    stack.push(arr[0]);
-    int next;
-    int j = 0;
-    int element;
-    for (int i = 1; i < n; i++) {
-      next = arr[i];
-      if (!stack.isEmpty()) {
-        element = stack.pop();
-        while (element < next) {
-          ans[j] = next;
-          j++;
-          if (stack.isEmpty()) {
-            break;
-          }
-          element = stack.pop();
-        }
-        if (element > next) {
-          stack.push(element);
-        }
+    int[] nge = new int[n];
+    for (int i = n - 1; i >= 0; i--) {
+      while (!stack.isEmpty() && stack.peek() <= arr[i]) {
+        stack.pop();
       }
-      stack.push(next);
+      nge[i] = stack.isEmpty() ? -1 : stack.peek();
+      stack.push(arr[i]);
     }
     while (!stack.isEmpty()) {
       stack.pop();
-      ans[j] = -1;
-      j++;
     }
-  }
-
-  private static void accept(int s) {
-    System.out.printf("%d ", s);
+    for (int i = 0; i < n; i++) {
+      System.out.println(arr[i] + " --> " + nge[i]);
+    }
   }
 }

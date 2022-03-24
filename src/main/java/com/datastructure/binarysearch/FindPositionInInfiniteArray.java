@@ -7,11 +7,11 @@ public class FindPositionInInfiniteArray {
         100, 130, 140, 160, 170};
     int ans = findPos(arr, 170);
 
-   if (ans == -1) {
-    System.out.println("Element not found");
-   } else {
-    System.out.println("Element found at index " + ans);
-   }
+    if (ans == -1) {
+      System.out.println("Element not found");
+    } else {
+      System.out.println("Element found at index " + ans);
+    }
   }
 
   private static int findPos(int[] arr, int x) {

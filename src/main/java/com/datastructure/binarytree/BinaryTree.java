@@ -18,17 +18,17 @@ public class BinaryTree<T extends Comparable<T>> {
   }
 
   public boolean contains(T data) {
-   if (data == null) {
-    return false;
-   }
+    if (data == null) {
+      return false;
+    }
     return contains(root, data);
 
   }
 
   private boolean contains(Node<T> node, T data) {
-   if (node == null) {
-    return false;
-   }
+    if (node == null) {
+      return false;
+    }
     int compareValue = data.compareTo(node.data);
     if (compareValue < 0) {
       return contains(node.left, data);
@@ -51,22 +51,22 @@ public class BinaryTree<T extends Comparable<T>> {
   }
 
   private Node<T> insert(Node<T> node, T data) {
-   if (node == null) {
-    return new Node<>(data);
-   }
+    if (node == null) {
+      return new Node<>(data);
+    }
     int compareValue = data.compareTo(node.data);
-   if (compareValue < 0) {
-    node.left = insert(node.left, data);
-   } else {
-    node.right = insert(node.right, data);
-   }
+    if (compareValue < 0) {
+      node.left = insert(node.left, data);
+    } else {
+      node.right = insert(node.right, data);
+    }
     return node;
   }
 
   public boolean remove(T data) {
-   if (data == null) {
-    return false;
-   }
+    if (data == null) {
+      return false;
+    }
     if (contains(data)) {
       root = remove(root, data);
       nodeCount--;
@@ -76,9 +76,9 @@ public class BinaryTree<T extends Comparable<T>> {
   }
 
   private Node<T> remove(Node<T> node, T data) {
-   if (node == null) {
-    return null;
-   }
+    if (node == null) {
+      return null;
+    }
     int compareValue = data.compareTo(node.data);
     if (compareValue < 0) {
       node.left = remove(node.left, data);
@@ -99,9 +99,9 @@ public class BinaryTree<T extends Comparable<T>> {
   }
 
   private Node<T> findMax(Node<T> node) {
-   while (node.right != null) {
-    node = node.right;
-   }
+    while (node.right != null) {
+      node = node.right;
+    }
     return node;
   }
 

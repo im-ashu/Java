@@ -23,12 +23,12 @@ public class FullBinaryTree {
       } else if (n.right != null && n.left == null) {
         return false;
       }
-     if (n.left != null) {
-      q.add(n.left);
-     }
-     if (n.right != null) {
-      q.add(n.right);
-     }
+      if (n.left != null) {
+        q.add(n.left);
+      }
+      if (n.right != null) {
+        q.add(n.right);
+      }
 
     }
     return true;

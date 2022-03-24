@@ -7,13 +7,13 @@ public class FindSumPairsInSortedRotatedArray {
     int sum = 12;
     int n = arr.length;
 
-   if (pairInSortedRotated(arr, n, sum)) {
-    System.out.print("Array has two elements" +
-        " with sum 16");
-   } else {
-    System.out.print("Array doesn't have two" +
-        " elements with sum 16 ");
-   }
+    if (pairInSortedRotated(arr, n, sum)) {
+      System.out.print("Array has two elements" +
+          " with sum 16");
+    } else {
+      System.out.print("Array doesn't have two" +
+          " elements with sum 16 ");
+    }
   }
 
   private static boolean pairInSortedRotated(int[] arr, int n, int sum) {
@@ -35,12 +35,12 @@ public class FindSumPairsInSortedRotatedArray {
   }
 
   private static int findPivot(int[] arr, int low, int high) {
-   if (high < low) {
-    return -1;
-   }
-   if (high == low) {
-    return low;
-   }
+    if (high < low) {
+      return -1;
+    }
+    if (high == low) {
+      return low;
+    }
     int mid = (low + high) / 2;
     if (mid < high && arr[mid + 1] < arr[mid]) {
       return mid;

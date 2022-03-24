@@ -8,8 +8,12 @@ public class ShortestCommonSuperSequence {
     int n = a.length();
     int m = b.length();
     int lcs = lcs(a, b, n, m);
+    int lcsII = lcsII(a, b, n, m);
     int scss = a.length() + b.length() - lcs;
     System.out.println("Shortest Common Super Sequence length is : " + scss);
+    scss = a.length() + b.length() - lcsII;
+    System.out.println(
+        "Shortest Common Super Sequence length using space optimization technique is : " + scss);
   }
 
   private static int lcs(String a, String b, int n, int m) {
@@ -33,7 +37,7 @@ public class ShortestCommonSuperSequence {
         scs.append(a.charAt(i - 1));
         i--;
         j--;
-      } else if (t[i][j] == t[i - 1][j]) {
+      } else if (t[i - 1][j] > t[i][j - 1]) {
         scs.append(a.charAt(i - 1));
         i--;
       } else {
@@ -51,5 +55,23 @@ public class ShortestCommonSuperSequence {
     }
     System.out.println(scs.reverse());
     return t[n][m];
+  }
+
+  private static int lcsII(String a, String b, int n, int m) {
+    int[] prev = new int[m + 1];
+    for (int i = 0; i < n + 1; i++) {
+      int[] current = new int[m + 1];
+      for (int j = 0; j < m + 1; j++) {
+        if (i == 0 || j == 0) {
+          current[j] = 0;
+        } else if (a.charAt(i - 1) == b.charAt(j - 1)) {
+          current[j] = prev[j - 1] + 1;
+        } else {
+          current[j] = Math.max(prev[j], current[j - 1]);
+        }
+      }
+      prev = current;
+    }
+    return prev[m];
   }
 }

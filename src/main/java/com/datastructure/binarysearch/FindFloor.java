@@ -9,13 +9,13 @@ public class FindFloor {
     int index = floorSearch(
         arr, 0, n - 1,
         x);
-   if (index == -1) {
-    System.out.println(
-        "Floor of " + x + " doesn't exist in array ");
-   } else {
-    System.out.println(
-        "Floor of " + x + " is " + arr[index]);
-   }
+    if (index == -1) {
+      System.out.println(
+          "Floor of " + x + " doesn't exist in array ");
+    } else {
+      System.out.println(
+          "Floor of " + x + " is " + arr[index]);
+    }
   }
 
   private static int floorSearch(int[] arr, int start, int end, int x) {

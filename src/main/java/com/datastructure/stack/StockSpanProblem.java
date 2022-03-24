@@ -1,35 +1,27 @@
 package com.datastructure.stack;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Stack;
+import java.util.stream.IntStream;
 
 public class StockSpanProblem {
 
   public static void main(String[] args) {
-    int price[] = {100, 100, 60, 70, 60, 75, 85};
-    int n = price.length;
-    int S[] = new int[n];
-
-    calculateSpan(price, n, S);
-    Arrays.stream(S).forEachOrdered(StockSpanProblem::accept);
-    System.out.println();
-
+    int[] arr = {100, 80, 60, 75, 110, 75, 85};
+    int n = arr.length;
+    stockSpan(arr, n);
   }
 
-  private static void calculateSpan(int[] price, int n, int[] s) {
-    Stack<Integer> stack = new Stack<>();
-    stack.push(0);
-    s[0] = 1;
-    for (int i = 1; i < n; i++) {
-      while (!stack.isEmpty() && price[stack.peek()] <= price[i]) {
-        stack.pop();
+  private static void stockSpan(int[] arr, int n) {
+    ArrayList<Integer> result = new ArrayList<>(n);
+    Stack<Integer> s = new Stack<>();
+    for (int i = 0; i < n; i++) {
+      while (!s.isEmpty() && arr[s.peek()] <= arr[i]) {
+        s.pop();
       }
-      s[i] = (stack.isEmpty()) ? (i + 1) : (i - stack.peek());
-      stack.push(i);
+      result.add(s.isEmpty() ? -1 : s.peek());
+      s.add(i);
     }
-  }
-
-  private static void accept(int s) {
-    System.out.printf("%d ", s);
+    IntStream.range(0, n).mapToObj(i -> i - result.get(i) + " ").forEach(System.out::print);
   }
 }

@@ -27,9 +27,9 @@ public class HamiltonianCycle {
   void printSolution(int[] path) {
     System.out.println("Solution Exists: Following" +
         " is one Hamiltonian Cycle");
-   for (int j : path) {
-    System.out.print(" " + j + " ");
-   }
+    for (int j : path) {
+      System.out.print(" " + j + " ");
+    }
 
     // Let us print the first vertex again to show the
     // complete cycle

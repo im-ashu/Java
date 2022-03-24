@@ -28,18 +28,18 @@ public class IsIdentical {
       if (!node1.data.equals(Objects.requireNonNull(node2).data)) {
         return false;
       }
-     if (node1.left != null) {
-      q1.add(node1.left);
-     }
-     if (node1.right != null) {
-      q1.add(node1.right);
-     }
-     if (node2.left != null) {
-      q2.add(node2.left);
-     }
-     if (node2.right != null) {
-      q2.add(node2.right);
-     }
+      if (node1.left != null) {
+        q1.add(node1.left);
+      }
+      if (node1.right != null) {
+        q1.add(node1.right);
+      }
+      if (node2.left != null) {
+        q2.add(node2.left);
+      }
+      if (node2.right != null) {
+        q2.add(node2.right);
+      }
     }
     return q1.isEmpty() && q2.isEmpty();
   }

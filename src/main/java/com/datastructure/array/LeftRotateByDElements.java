@@ -57,12 +57,12 @@ public class LeftRotateByDElements {
       int temp = arr[i];
       while (true) {
         int k = j + d;
-       if (k >= n) {
-        k = k - n;
-       }
-       if (k == i) {
-        break;
-       }
+        if (k >= n) {
+          k = k - n;
+        }
+        if (k == i) {
+          break;
+        }
         arr[j] = arr[k];
         j = k;
       }

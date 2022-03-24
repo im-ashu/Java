@@ -27,9 +27,9 @@ public class MColoringProblem {
 
   void printSolution(int[] color) {
     System.out.println("Solution Exists: Following are the assigned colors");
-   for (int i = 0; i < V; i++) {
-    System.out.print(" " + color[i] + " ");
-   }
+    for (int i = 0; i < V; i++) {
+      System.out.print(" " + color[i] + " ");
+    }
     System.out.println();
   }
 

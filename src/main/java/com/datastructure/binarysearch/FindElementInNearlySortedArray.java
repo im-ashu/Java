@@ -7,12 +7,12 @@ public class FindElementInNearlySortedArray {
     int n = arr.length;
     int x = 4;
     int result = binarySearch(arr, 0, n - 1, x);
-   if (result == -1) {
-    System.out.println("Element is not present in array");
-   } else {
-    System.out.println("Element is present at index " +
-        result);
-   }
+    if (result == -1) {
+      System.out.println("Element is not present in array");
+    } else {
+      System.out.println("Element is present at index " +
+          result);
+    }
   }
 
   private static int binarySearch(int[] arr, int start, int end, int x) {
