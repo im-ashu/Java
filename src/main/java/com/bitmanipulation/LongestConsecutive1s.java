@@ -1,4 +1,4 @@
-package com.basic;
+package com.bitmanipulation;
 
 public class LongestConsecutive1s {
 

@@ -38,9 +38,9 @@ public class MinStack extends Stack<Integer> {
   }
 
   public int getMin() {
-   if (supportingStack.isEmpty()) {
-    return -1;
-   }
+    if (supportingStack.isEmpty()) {
+      return -1;
+    }
     return supportingStack.peek();
   }
 }

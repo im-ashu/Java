@@ -76,8 +76,8 @@ public class UnionFind {
     if (rootP == rootQ) {
       return;
     }
-    if (size[q] > size[p]) {
-      size[rootQ] += size[rootQ];
+    if (size[rootQ] > size[rootP]) {
+      size[rootQ] += size[rootP];
       id[rootP] = rootQ;
 
     } else {

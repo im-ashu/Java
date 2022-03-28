@@ -42,9 +42,9 @@ public class PermutationWithCaseChange {
 
       // If j-th bit is set, we convert it to upper case
       for (int j = 0; j < n; j++) {
-       if (((i >> j) & 1) == 1) {
-        combination[j] = (char) (combination[j] - 32);
-       }
+        if (((i >> j) & 1) == 1) {
+          combination[j] = (char) (combination[j] - 32);
+        }
       }
 
       // Printing current combination

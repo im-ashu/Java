@@ -12,9 +12,9 @@ public class RemoveLoop {
   }
 
   public static void makeLoop(Node head, int x) {
-      if (x == 0) {
-          return;
-      }
+    if (x == 0) {
+      return;
+    }
     Node curr = head;
     Node last = head;
 
@@ -24,9 +24,9 @@ public class RemoveLoop {
       currentPosition++;
     }
 
-      while (last.next != null) {
-          last = last.next;
-      }
+    while (last.next != null) {
+      last = last.next;
+    }
     last.next = curr;
   }
 
@@ -34,9 +34,9 @@ public class RemoveLoop {
     Node hare = head.next;
     Node tortoise = head;
     while (hare != tortoise) {
-        if (hare == null || hare.next == null) {
-            return false;
-        }
+      if (hare == null || hare.next == null) {
+        return false;
+      }
       hare = hare.next.next;
       tortoise = tortoise.next;
     }
@@ -73,11 +73,11 @@ public class RemoveLoop {
       RemoveLoop x = new RemoveLoop();
       x.removeLoop(head);
 
-        if (detectLoop(head) || length(head) != n) {
-            System.out.println("0");
-        } else {
-            System.out.println("1");
-        }
+      if (detectLoop(head) || length(head) != n) {
+        System.out.println("0");
+      } else {
+        System.out.println("1");
+      }
     }
   }
 

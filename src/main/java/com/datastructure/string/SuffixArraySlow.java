@@ -67,17 +67,17 @@ public class SuffixArraySlow extends SuffixArray {
     // Compare the two suffixes inspired by Robert Sedgewick and Kevin Wayne
     @Override
     public int compareTo(Suffix other) {
-     if (this == other) {
-      return 0;
-     }
+      if (this == other) {
+        return 0;
+      }
       int min_len = Math.min(len, other.len);
       for (int i = 0; i < min_len; i++) {
-       if (text[index + i] < other.text[other.index + i]) {
-        return -1;
-       }
-       if (text[index + i] > other.text[other.index + i]) {
-        return +1;
-       }
+        if (text[index + i] < other.text[other.index + i]) {
+          return -1;
+        }
+        if (text[index + i] > other.text[other.index + i]) {
+          return +1;
+        }
       }
       return len - other.len;
     }

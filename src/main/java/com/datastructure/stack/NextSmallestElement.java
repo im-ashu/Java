@@ -20,8 +20,8 @@ public class NextSmallestElement {
       nse[i] = s.isEmpty() ? -1 : s.peek();
       s.push(arr[i]);
     }
-   for (int i = 0; i < n; i++) {
-    System.out.println(arr[i] + " --> " + nse[i]);
-   }
+    for (int i = 0; i < n; i++) {
+      System.out.println(arr[i] + " --> " + nse[i]);
+    }
   }
 }

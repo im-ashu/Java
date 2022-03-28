@@ -102,9 +102,9 @@ public class SuffixArrayFast extends SuffixArray {
       tmp = rank;
       rank = sa2;
       sa2 = tmp;
-     if (r == N - 1) {
-      break;
-     }
+      if (r == N - 1) {
+        break;
+      }
       alphabetSize = r + 1;
     }
   }

@@ -22,11 +22,11 @@ public class NumDecodings {
         dp[i] = 0;
       } else if (A.charAt(i - 1) != '0' && A.charAt(i) == '0') {
         if (A.charAt(i - 1) == '1' || A.charAt(i - 1) == '2') {
-            if (i >= 2) {
-                dp[i] = dp[i - 2];
-            } else {
-                dp[i] = 1;
-            }
+          if (i >= 2) {
+            dp[i] = dp[i - 2];
+          } else {
+            dp[i] = 1;
+          }
         } else {
           dp[i] = 0;
         }
@@ -54,13 +54,13 @@ public class NumDecodings {
   }
 
   private static int decodeMessage(int[] dp, int s, String str, int n) {
-      if (s >= n) {
-          return 1;
-      }
+    if (s >= n) {
+      return 1;
+    }
 
-      if (dp[s] != -1) {
-          return dp[s];
-      }
+    if (dp[s] != -1) {
+      return dp[s];
+    }
 
     int num, tc;
     num = tc = 0;
@@ -68,13 +68,13 @@ public class NumDecodings {
     for (int i = s; i < n; i++) {
       num = num * 10 + (str.charAt(i) - '0');
 
-        if (num >= 1 && num <= 26) {
-            int c = decodeMessage(dp, i + 1, str, n);
+      if (num >= 1 && num <= 26) {
+        int c = decodeMessage(dp, i + 1, str, n);
 
-            tc = (tc % mod + c % mod) % mod;
-        } else {
-            break;
-        }
+        tc = (tc % mod + c % mod) % mod;
+      } else {
+        break;
+      }
     }
 
     return (dp[s] = tc);

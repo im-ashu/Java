@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Computer implements ComputerPart {
 
-  private final List<ComputerPart> parts = Arrays.asList(new Mouse(), new KeyBoard(), new Monitor());
+  private final List<ComputerPart> parts = Arrays.asList(new Mouse(), new KeyBoard(),
+      new Monitor());
 
   @Override
   public void accept(ComputerPartVisitor visitor) {

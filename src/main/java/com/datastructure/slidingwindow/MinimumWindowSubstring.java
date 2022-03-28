@@ -46,9 +46,9 @@ public class MinimumWindowSubstring {
       }
       end++;
     }
-   if (len == Integer.MAX_VALUE) {
-    return "";
-   }
+    if (len == Integer.MAX_VALUE) {
+      return "";
+    }
     return s.substring(head, head + len);
   }
 }

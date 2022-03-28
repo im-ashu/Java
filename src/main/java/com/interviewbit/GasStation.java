@@ -39,9 +39,9 @@ public class GasStation {
       }
     }
 
-      if (totalRemain < 0) {
-          return -1;
-      }
+    if (totalRemain < 0) {
+      return -1;
+    }
 
     return start;
 

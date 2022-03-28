@@ -51,15 +51,15 @@ public class WaysToFormMaxHeap {
     if (r > n) {
       return 0;
     }
-   if (n <= 1) {
-    return 1;
-   }
-   if (r == 0) {
-    return 1;
-   }
-   if (r == 1) {
-    return n;
-   }
+    if (n <= 1) {
+      return 1;
+    }
+    if (r == 0) {
+      return 1;
+    }
+    if (r == 1) {
+      return n;
+    }
     if (nCrdp.get(n).get(r) != -1) {
       return nCrdp.get(n).get(r);
     }

@@ -4,8 +4,8 @@ public class BinarySearch {
 
   public static void main(String[] args) {
 
-    int[] arr = {7, 8, 9, 0, 1, 2, 3, 4, 5, 6};
-    int key = 11;
+    int[] arr = {1, 2, 3, 4, 5, 6, 8, 9, 10};
+    int key = 7;
     final int minEleIndex = findMinInSortedArray(arr, 0, arr.length - 1);
     final int bsResult1 = binarySearch(arr, key, 0, minEleIndex - 1);
     final int bsResult2 = binarySearch(arr, key, minEleIndex, arr.length - 1);

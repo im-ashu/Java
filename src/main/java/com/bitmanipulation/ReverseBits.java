@@ -1,14 +1,16 @@
-package com.basic;
+package com.bitmanipulation;
 
 public class ReverseBits {
 
   public static void main(String[] args) {
     long a = 5;
     int max = Integer.MIN_VALUE - 1;
-    System.out.println(max);
+    /*System.out.println(max);
     System.out.println(reverse(a));
     System.out.println(bitSet(a));
-    System.out.println(solve(100000000));
+    System.out.println(solve(100000000));*/
+    System.out.println(countSetBits(1000000000));
+    System.out.println(countBits(10));
   }
 
   public static long reverse(long a) {
@@ -67,6 +69,42 @@ public class ReverseBits {
     }
     return (int) (res % mod);
 
+  }
+
+  public static int countSetBits(int n) {
+    //    Write your code here.
+    long result = countSetBitsUtil(n);
+    return (int) (result % (1e9 + 7));
+  }
+
+  public static long countSetBitsUtil(int n) {
+    int modulo = (int) 1e9 + 7;
+    if (n == 0 || n == 1) {
+      return n;
+    }
+    long x = largestPower2(n);
+    long b2x = ((1L << (x - 1)) * x) % modulo;
+    long msb = (n - (1L << x) + 1) % modulo;
+    return b2x + msb + countSetBits(n - (1 << x));
+  }
+
+  public static long largestPower2(int n) {
+    int x = 0;
+    while ((1 << x) <= n) {
+      x++;
+    }
+    return x - 1;
+  }
+
+  public static int countBits(int n) {
+    int modulo = (int) 1e9 + 7;
+    int[] t = new int[n + 1];
+    int result = 0;
+    for (int i = 1; i <= n; i++) {
+      t[i] = (t[i / 0B10] + (i % 0B10)) % modulo;
+      result += t[i];
+    }
+    return result;
   }
 
   public int numSetBits(long a) {
