@@ -29,20 +29,14 @@ public class SubArraySum {
     int windowSum = 0;
     while (end < n) {
       windowSum += arr[end];
+      while (windowSum > s) {
+        windowSum -= arr[begin];
+        begin++;
+      }
       if (windowSum == s) {
         ans.add(begin + 1);
         ans.add(end + 1);
         return ans;
-      } else if (windowSum > s) {
-        while (windowSum > s) {
-          windowSum -= arr[begin];
-          begin++;
-          if (windowSum == s) {
-            ans.add(begin + 1);
-            ans.add(end + 1);
-            return ans;
-          }
-        }
       }
       end++;
     }
