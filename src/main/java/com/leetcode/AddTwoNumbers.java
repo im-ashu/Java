@@ -6,12 +6,52 @@ public class AddTwoNumbers {
     ListNode l1 = new ListNode(9, new ListNode(9,
         new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
     ListNode l2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
-    final ListNode result = addTwoNumbers(l1, l2);
+    ListNode result = addTwoNumbers(l1, l2);
     ListNode current = result;
     while (current != null) {
       System.out.print(current.val + " ");
       current = current.next;
     }
+    System.out.println();
+    result = addTwoNumbersII(l1, l2);
+    current = result;
+    while (current != null) {
+      System.out.print(current.val + " ");
+      current = current.next;
+    }
+  }
+
+  private static ListNode addTwoNumbersII(ListNode l1, ListNode l2) {
+    ListNode dummy = new ListNode(0);
+    ListNode add = dummy;
+    int carry = 0;
+    int sum = 0;
+    while (l1 != null && l2 != null) {
+      sum = (carry + l1.val + l2.val) % 10;
+      carry = (carry + l1.val + l2.val) / 10;
+      dummy.next = new ListNode(sum);
+      dummy = dummy.next;
+      l1 = l1.next;
+      l2 = l2.next;
+    }
+    while (l1 != null) {
+      sum = (carry + l1.val) % 10;
+      carry = (carry + l1.val) / 10;
+      dummy.next = new ListNode(sum);
+      dummy = dummy.next;
+      l1 = l1.next;
+    }
+    while (l2 != null) {
+      sum = (carry + l2.val) % 10;
+      carry = (carry + l2.val) / 10;
+      dummy.next = new ListNode(sum);
+      dummy = dummy.next;
+      l2 = l2.next;
+    }
+    if (carry == 1) {
+      dummy.next = new ListNode(carry);
+    }
+    return add.next;
   }
 
   public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -59,23 +99,5 @@ public class AddTwoNumbers {
       current.next = new ListNode(carry);
     }
     return result;
-  }
-
-  public static class ListNode {
-
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-      this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-      this.val = val;
-      this.next = next;
-    }
   }
 }

@@ -3,7 +3,7 @@ package com.leetcode;
 public class FirstMissingPositive {
 
   public static void main(String[] args) {
-    int[] nums = {7, 8,};
+    int[] nums = {7, 8};
     System.out.println(new FirstMissingPositive().firstMissingPositive(nums));
   }
 

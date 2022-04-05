@@ -5,6 +5,22 @@ public class FindDuplicate {
   public static void main(String[] args) {
     int[] nums = {1, 1, 2};
     System.out.println(new FindDuplicate().findDuplicate(nums));
+    System.out.println(new FindDuplicate().findDuplicateII(nums));
+  }
+
+  private int findDuplicateII(int[] nums) {
+    int slow = nums[0];
+    int fast = nums[0];
+    do {
+      fast = nums[nums[fast]];
+      slow = nums[slow];
+    } while (fast != slow);
+    fast = nums[0];
+    while (fast != slow) {
+      slow = nums[slow];
+      fast = nums[fast];
+    }
+    return fast;
   }
 
   public int findDuplicate(int[] nums) {

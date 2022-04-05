@@ -1,6 +1,5 @@
 package com.leetcode;
 
-import com.codestudio.TreeNode;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
@@ -30,6 +29,29 @@ public class Deserialize {
         assert parent != null;
         parent.right = right;
         q.add(right);
+      }
+    }
+    return root;
+  }
+
+  public static TreeNode deserialize(Integer[] nums) {
+    TreeNode root = new TreeNode(nums[0]);
+    Queue<TreeNode> q = new LinkedList<>();
+    q.add(root);
+    int n = nums.length;
+    for (int i = 1; i < n; i++) {
+      TreeNode rem = q.poll();
+      if (nums[i] != null) {
+        assert rem != null;
+        rem.left = new TreeNode(nums[i]);
+        q.add(rem.left);
+      }
+      if (i < n - 1) {
+        if (nums[++i] != null) {
+          assert rem != null;
+          rem.right = new TreeNode(nums[i]);
+          q.add(rem.right);
+        }
       }
     }
     return root;
