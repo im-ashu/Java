@@ -1,14 +1,13 @@
 package com.leetcode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CombinationSum {
 
   public static void main(String[] args) {
-    int[] candidates = {2, 5, 2, 1, 2};
-    int target = 5;
+    int[] candidates = {2, 3, 5};
+    int target = 8;
     for (List<Integer> list : new CombinationSum().combinationSum(candidates, target)) {
       for (Integer numbers : list) {
         System.out.print(numbers + " ");
@@ -19,7 +18,6 @@ public class CombinationSum {
   }
 
   public List<List<Integer>> combinationSum(int[] candidates, int target) {
-    Arrays.sort(candidates);
     List<List<Integer>> res = new ArrayList<>();
     if (candidates.length == 0) {
       return res;
@@ -38,14 +36,11 @@ public class CombinationSum {
       return;
     }
     for (int i = index, candidatesLength = candidates.length; i < candidatesLength; i++) {
-      if (i > index && candidates[i] == candidates[i - 1]) {
-        continue;
-      }
       if (candidates[i] > target) {
         return;
       }
       subset.add(candidates[i]);
-      combinationSum(candidates, target - candidates[i], i + 1, res, subset);
+      combinationSum(candidates, target - candidates[i], i, res, subset);
       subset.remove(subset.size() - 1);
     }
   }

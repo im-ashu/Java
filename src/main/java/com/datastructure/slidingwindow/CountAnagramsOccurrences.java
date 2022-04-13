@@ -7,8 +7,8 @@ import java.util.stream.IntStream;
 public class CountAnagramsOccurrences {
 
   public static void main(String[] args) {
-    String text = "fforxxorffxdoffr";
-    String pattern = "ffor";
+    String text = "abcdxabcde";
+    String pattern = "abcdeabcdx";
     System.out.println(countAnagrams(text, pattern));
   }
 

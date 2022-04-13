@@ -6,7 +6,7 @@ public class LeftRotateByDElements {
 
   public static void main(String[] args) {
     int[] arr = {1, 2, 3, 4, 5, 6, 7};
-    rotateArr(arr, 2, arr.length);
+    rotateArr(arr, 6, arr.length);
     Arrays.stream(arr).forEach(e -> System.out.print(e + " "));
   }
 

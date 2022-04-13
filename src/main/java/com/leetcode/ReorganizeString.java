@@ -25,7 +25,7 @@ public class ReorganizeString {
     for (int i = 0; i < n; i++) {
       map.put(str.charAt(i), map.getOrDefault(str.charAt(i), 0) + 1);
     }
-    PriorityQueue<Character> pq = new PriorityQueue((a, b) -> map.get(b) - map.get(a));
+    PriorityQueue<Character> pq = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
     pq.addAll(map.keySet());
     StringBuilder res = new StringBuilder();
     Queue<Character> q = new LinkedList<>();

@@ -9,7 +9,7 @@ public class AllocateBooks {
     ArrayList<Integer> A = new ArrayList<>(
         Arrays.asList(97, 26, 12, 67, 10, 33, 79, 49, 79, 21, 67, 72, 93, 36, 85, 45, 28, 91, 94,
             57, 1, 53, 8, 44, 68, 90, 24));
-    int B = 26;
+    int B = 1;
     System.out.println(books(A, B));
   }
 

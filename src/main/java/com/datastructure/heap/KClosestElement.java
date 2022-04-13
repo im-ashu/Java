@@ -21,7 +21,7 @@ public class KClosestElement {
     for (int i = 0; i < k; i++) {
       maxHeap.add(i);
     }
-    for (int i = k; i < n; i++) {
+    for (int i = k; i < n && maxHeap.size() > 0; i++) {
       int absDiff = Math.abs(arr[i] - x);
       if (Math.abs(arr[maxHeap.peek()] - x) > absDiff) {
         maxHeap.poll();

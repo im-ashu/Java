@@ -14,7 +14,6 @@ public class MaximumContiguousProduct {
   }
 
   public static int maxProduct(final List<Integer> A) {
-    final Integer[] objects = (Integer[]) A.toArray();
     int n = A.size();
     int maxEndingHere = A.get(0);
     int minEndingHere = A.get(0);

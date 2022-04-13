@@ -22,12 +22,12 @@ public class MaximumXOR {
       int res = 0;
       TrieNode node = trie.root;
       for (int i = 31; i >= 0; i--) {
-        int bit = 1 - ((num >> i) & 1);
-        if (node.child[bit] != null) {
+        int requiredBit = 1 - ((num >> i) & 1);
+        if (node.child[requiredBit] != null) {
           res |= (1 << i);
-          node = node.child[bit];
+          node = node.child[requiredBit];
         } else {
-          node = node.child[1 - bit];
+          node = node.child[1 - requiredBit];
         }
       }
       max = Math.max(max, res);
@@ -35,12 +35,12 @@ public class MaximumXOR {
     return max;
   }
 
-  class TrieNode {
+  static class TrieNode {
 
     TrieNode[] child = new TrieNode[2];
   }
 
-  class Trie {
+  static class Trie {
 
     TrieNode root = new TrieNode();
 
